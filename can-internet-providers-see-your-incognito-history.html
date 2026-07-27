@@ -10,11 +10,64 @@
     <link rel="shortcut icon" href="../media/icons/logo.png" type="image/x-png">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .article-container-wide {
-            margin: 0 auto;
-            max-width: 1125px !important; 
-            padding: 20px;                     
+        * {
+            box-sizing: border-box;
         }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        #header {
+            width: 100%;
+            background-color: #0070F0;
+            padding: 12px 15px;
+        }
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            max-width: 1125px;
+            margin: 0 auto;
+        }
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-h1 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        #header-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 14px;
+        }
+        #header-nav .nav-link {
+            color: #ffffff;
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        #header-nav .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Container do Artigo ajustado para Celular e Desktop */
+        .article-container-wide {
+            width: 92% !important;        /* Força a largura a ocupar 92% da tela do celular, criando respiro */
+            max-width: 1125px !important; /* Limita o tamanho em telas grandes */
+            margin: 25px auto !important; /* Centraliza perfeitamente */
+            padding: 20px !important;       /* Espaçamento interno adequado */
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
         .article-content {
             color: #475569;
             font-size: 1rem;
@@ -41,7 +94,7 @@
         }
         .article-content h1 {
             color: #1e293b;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             line-height: 1.3;
             margin-bottom: 10px;
         }
@@ -51,8 +104,8 @@
         }
         .article-content h2 {
             color: #0f172a;
-            font-size: 1.25rem;
-            margin-top: 30px;
+            font-size: 1.2rem;
+            margin-top: 25px;
             margin-bottom: 12px;
             font-weight: 600;
         }
@@ -84,18 +137,34 @@
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
-            margin-top: 35px;
+            margin-top: 25px;
             text-align: center;
             text-decoration: none;
-            transition: background 0.2s;
-            box-sizing: border-box;
         }
         .btn-back-blog:hover {
             background-color: #0056b3;
         }
 
-        /* Media Queries para Celulares */
-        @media (max-width: 768px) {
+        /* Estilo do Rodapé */
+        #footer {
+            padding: 25px 15px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .footer-links {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #475569;
+            text-decoration: none;
+        }
+        .divider {
+            margin: 0 5px;
+        }
+
+        /* Ajustes para telas maiores (Desktop) */
+        @media (min-width: 768px) {
             .header-container {
                 flex-direction: row;
                 justify-content: space-between;
@@ -108,7 +177,7 @@
                 font-size: 1.8rem;
             }
             .article-content h2 {
-                font-size: 1.15rem;
+                font-size: 1.35rem;
             }
         }
     </style>
@@ -117,18 +186,18 @@
     <header id="header">
         <div class="header-container">
             <div class="logo-wrapper">
-                <img src="../media/icons/logo2.png" alt="ZetaPass" style="max-width: 23px; margin-top: 5px; margin-left: 0px;">
+                <img src="../media/icons/logo2.png" alt="ZetaPass" style="max-width: 23px; margin-top: 2px;">
                 <h1 class="header-h1" onclick="window.location.href = '../index.html'" style="cursor: pointer;">ZetaVault</h1>
             </div>
             <nav id="header-nav">
                 <a href="../blog.html" class="nav-link">Blog</a>
                 <a href="../index.html" class="nav-link">Password Generator</a>
-                <a href="../checker.html" class="nav-link">Password Strength Checker</a>
+                <a href="../checker.html" class="nav-link">Strength Checker</a>
                 <a href="../invisible.html" class="nav-link">Invisible Character</a>
             </nav>
         </div>
     </header>
-    <main class="container article-container-wide" style="margin-top: 30px; margin-bottom: 25px;">
+    <main class="container article-container-wide">
         <article class="article-content">
             <div class="article-header">
                 <span class="article-category">🕵️ Privacy Myths</span>
