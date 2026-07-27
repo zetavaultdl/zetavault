@@ -326,17 +326,21 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 768px) {
+    #header {
+        padding: 16px 20px; /* Mantém o mesmo espaçamento lateral no celular */
+    }
+
     .header-container {
-        align-items: center; 
-        text-align: center;
-        padding-left: 20px;
-        padding-right: 20px;
+        align-items: flex-start; /* Força a logo a ficar na esquerda também no celular */
+        text-align: left;
+        padding-left: 20px; /* Recuo confortável para a logo e os links não colarem na borda */
     }
 
     .header-nav {
-        margin-left: 0;
-        justify-content: center;
+        margin-left: -14px; /* Mantém os links alinhados com o início da logo */
+        justify-content: flex-start; /* Alinha o menu de links para a esquerda */
         flex-wrap: wrap;
+        gap: 2px;
     }
 
     .nav-link {
@@ -344,14 +348,23 @@ input[type="checkbox"] {
         padding: 6px 10px;
     }
 
+    .main-title {
+        font-size: 1.8rem;
+        margin: 25px auto 15px auto;
+    }
+
     .container {
-        padding: 20px;
-        width: calc(100% - 24px);
+        padding: 20px 15px;
+        width: 92%;
     }
     
+    .password-type-container {
+        margin-bottom: 16px;
+    }
+
     .type-btn {
         font-size: 12px;
-        padding: 8px 4px;
+        padding: 8px 2px;
         gap: 4px;
     }
 }
