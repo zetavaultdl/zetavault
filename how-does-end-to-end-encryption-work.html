@@ -11,7 +11,7 @@
     <meta name="description" content="What is end-to-end encryption (E2EE)? Learn how this secure communication process keeps your private messages completely safe from hackers and third parties.">
     <style>
         .article-container {
-            margin: 0px 0px 0px 160px;
+            margin: 0px 0px 0px 15px;
             max-width: 1000px !important; 
             padding: 35px;               
         }
@@ -38,6 +38,7 @@
             margin-bottom: 10px;
         }
         .article-banner{
+            display: none;
             max-width: 700px;
             border-radius: 10px;
             margin: 10px 0px 0px 100px;
@@ -89,6 +90,11 @@
         }
         .btn-back-blog:hover {
             background-color: #0056b3;
+        }
+        @media (min-width: 768px) {
+            .article-banner{
+                display: flex;
+            }    
         }
     </style>
 </head>
