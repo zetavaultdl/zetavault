@@ -38,7 +38,7 @@
             margin-bottom: 10px;
         }
         .article-banner{
-            display: none;
+            display: none !important;
             max-width: 700px;
             border-radius: 10px;
             margin: 10px 0px 0px 100px;
@@ -91,10 +91,10 @@
         .btn-back-blog:hover {
             background-color: #0056b3;
         }
-        @media (min-width: 768px) {
-            .article-banner{
-                display: flex;
-            }    
+        @media screen and (min-width: 768px) {
+         .article-banner {
+                display: flex !important; /* ou 'flex', se precisar alinhar itens internos */
+          }    
         }
     </style>
 </head>
