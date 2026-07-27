@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background-color: #f8fafc; 
+    
+    background-image: url("media/background/backgroundicon1.png"); 
+    background-repeat: repeat; 
+    
+    background-size: 64px 64px; 
+    
+
+    margin: 0;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1e293b;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#header{
+    background-color: #1c77ff;
+    margin-top: -50px;
+    margin-left: -20px;
+     width: 1351px;
+     padding: 40px 20px 7px 20px; 
+
+     border: 1px solid rgba(143, 161, 211, 0.5);
+     border-left: none;
+     border-right: none;
+}
+
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;    
+    justify-content: flex-start;
+    gap: 14px;              
+    width: 100%;
+}
+
+.logo-wrapper{
+     display: flex;
+     align-items:flex-start;
+     flex-direction: row;
+     justify-content: flex-start;
+}
+
+.header-h1{
+    margin-left: 5px;
+    color: #f8fafc;
+    font-style: italic;
+    font-size: 1.75rem;
+    line-height: 1;
+    display: inline-block;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.nav-link {
+    color: rgba(248, 250, 252, 0.85); 
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15); 
+}
+
+.nav-link.active {
+    color: #1c77ff;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        justify-content: center; 
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+}
+
+.container {
+    margin-top: 50px;
+    margin-left: 420px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(38, 117, 220, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #b6cce6;
+}
+.password-type-container {
+  display: flex;
+  background: #f3f4f6; 
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.type-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.type-btn.active {
+  background: #ffffff;
+  color: hsl(224, 64%, 33%); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.result-container {
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #e2e8f0;
+}
+
+#password-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.05rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-break: break-all;
+    color: #1e293b;
+    padding-right: 10px;
+}
+
+.btn-copy {
+    background-color: #2b8dfc;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 12px 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+}
+
+.btn-copy:hover {
+    background-color: #0070F0;
+    transform: scale(1.05);
+}
+
+.btn-copy.copied {
+    background-color: #16a34a !important;
+    animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.strength-container {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.strength-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    min-width: 105px;
+}
+
+.strength-meter {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.setting label {
+    color: #475569;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+#length-val {
+    color: #0070F0;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 55%;
+    accent-color: #0070F0;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    accent-color: #0070F0;
+    cursor: pointer;
+}
+
+.btn-generate {
+    width: 100%;
+    background-color: #0070F0;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.2);
+}
+
+.btn-generate:hover {
+    background-color: #0070F0;
+}
+
+.btn-generate:active {
+    transform: scale(0.98);
+}
+
+#footer {
+    background-color: #002369;
+    margin-top: 60px;
+    margin-left: -20px; 
+    margin-bottom: 0;
+    padding: 24px;
+    line-height: 1.7;
+    height: 200px;
+    width: 1351px;
+    text-align: center;
+    font-family: Arial, sans-serif; 
+    
+}
+
+
+.footer-links {
+  margin-bottom: 12px;
+}
+
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+
+.footer-links a:hover {
+  color: #e2e8f0; 
+  text-decoration: underline;
+}
+
+.footer-links .divider {
+  color: #b6cce6;
+  margin: 0 8px;
+}
+
+
+.copyright {
+  font-size: 13px;
+  color: #93a9c5; 
+  margin: 0;
+}
+
+
+.security-note {
+  font-size: 11px;
+  color: #9ca3af; 
+  margin-top: 6px;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zetavault.io/">
+    <meta property="og:title" content="Password Strength Checker: Test If Your Password Is Safe | ZetaVault">
+    <meta property="og:description" content="Is your password secure against hackers? Test your password strength instantly with our free online security checker and find out if your credentials are safe.">
+    <meta property="og:image" content="media/imgs/og-image.png">
+    <meta name="description" content="Is your password secure against hackers? Test your password strength instantly with our free online security checker and find out if your credentials are safe.">
+    <title>Password Strength Checker: Test If Your Password Is Safe | ZetaVault</title>
+    <link href="https://fontshare.com[]=clash-display@600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="media/icons/logo.png" type="image/x-png">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .tool-card {
+            margin: 0 auto;
+            max-width: 650px !important; 
+            padding: 35px;   
+        }
+        .input-group { 
+            margin: 20px 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+            position: relative;
+        }
+        .input-group label { 
+            color: #475569; 
+            font-weight: 500; 
+            font-size: 0.95rem; 
+        }
+        .checker-input {
+            width: 100%; 
+            padding: 14px; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 8px;
+            font-size: 1.1rem; 
+            outline: none; 
+            transition: border 0.2s;
+            font-family: monospace;
+        }
+        .checker-input:focus { border-color: #1c77ff; }
+        .status-box {
+            background-color: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .status-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+        #strength-result {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #64748b;
+        }
+        .meter-container {
+            display: flex;
+            gap: 6px;
+            height: 8px;
+            margin-bottom: 15px;
+        }
+        .meter-segment {
+            flex: 1;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .requirements-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 15px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+        .req-item {
+            font-size: 0.88rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+        .req-item.valid {
+            color: #16a34a;
+            font-weight: 500;
+        }
+        .req-icon {
+            font-size: 1rem;
+        }
+        .btn-home {
+            display: inline-block; 
+            width: 100%; 
+            background-color: #0070F0; 
+            color: #ffffff;
+            border: none; 
+            padding: 12px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            border-radius: 8px;
+            cursor: pointer; 
+            margin-top: 10px; 
+            text-align: center; 
+            text-decoration: none; 
+            transition: background 0.2s;
+        }
+        .btn-home:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-container">
+            <div class="logo-wrapper" >
+                <img src="media/icons/logo2.png" alt="ZetaPass" style="max-width: 23px; margin-top: 5px; margin-left: 0px;">
+                <h1 class="header-h1" onclick="window.location.href = 'index.html'" style="cursor: pointer;">ZetaVault</h1>
+            </div>
+            <nav id="header-nav" >
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="index.html" class="nav-link">Password Generator</a>
+                <a href="checker.html" class="nav-link">Password Strength Checker</a>
+                <a href="invisible.html" class="nav-link">Invisible Character</a>
+            </nav>
+        </div>
+    </header>
+    <h1 style="text-align: center; margin: 30px auto 20px auto;">Password Strength Checker</h1>
+    <main class="container tool-card" style="margin-top: -5px;">
+        <div class="input-group">
+            <label for="password-input">Type a password to test its security:</label>
+            <input type="text" id="password-input" class="checker-input" placeholder="Enter password here..." autocomplete="off">
+        </div>
+        <div class="status-box">
+            <div class="status-header">
+                <span class="status-title">Security Score:</span>
+                <span id="strength-result">Too Short ❌</span>
+            </div>
+            <div class="meter-container">
+                <div class="meter-segment" id="seg-1"></div>
+                <div class="meter-segment" id="seg-2"></div>
+                <div class="meter-segment" id="seg-3"></div>
+                <div class="meter-segment" id="seg-4"></div>
+            </div>
+            <ul class="requirements-list">
+                <li class="req-item" id="req-length"><span class="req-icon">⚪</span> At least 15 characters</li>
+                <li class="req-item" id="req-upper"><span class="req-icon">⚪</span> Includes uppercase letters (A-Z)</li>
+                <li class="req-item" id="req-lower"><span class="req-icon">⚪</span> Includes lowercase letters (a-z)</li>
+                <li class="req-item" id="req-number"><span class="req-icon">⚪</span> Includes numbers (0-9)</li>
+                <li class="req-item" id="req-symbol"><span class="req-icon">⚪</span> Includes special characters (!@#$)</li>
+            </ul>
+        </div>
+        <p style="font-size: 11px; color: #666a72; text-align: center; margin-bottom: 20px;">🔒 Local Protection: Analysis runs entirely on your device. Your characters are never tracked or uploaded.</p>
+    </main>
+    <footer id="footer">
+         <div class="footer-links">
+             <a href="privacy.html">Privacy Policy</a>
+             <span class="divider">•</span>
+             <a href="terms.html">Terms of Service</a>
+             <span class="divider">•</span>
+             <a href="about.html">About Us</a>
+             <span class="divider">•</span>
+             <a href="blog.html">Security Blog</a>
+         </div>
+         <p class="copyright">© 2026 <strong>ZetaVault</strong>. All rights reserved.</p>
+         <p class="security-note">🔒 Localy generated passwords.</p>
+    </footer>
+    <script src="node_modules/zxcvbn/dist/zxcvbn.js"></script>
+    <script src="js/checker.js"></script>
+</body>
+</html>
