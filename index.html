@@ -18,11 +18,12 @@
 <body>
     <header id="header">
         <div class="header-container">
-            <div class="logo-wrapper" >
-                <img src="media/icons/logo2.png" alt="ZetaPass" style="max-width: 23px; margin-top: 5px; margin-left: 0px;">
-                <h1 class="header-h1" onclick="window.location.href = 'index.html'" style="cursor: pointer;">ZetaVault</h1>
+            <div class="logo-wrapper">
+                <img src="media/icons/logo2.png" alt="ZetaPass" class="logo-img">
+                <h1 class="header-h1" onclick="window.location.href = 'index.html'">ZetaVault</h1>
             </div>
-            <nav id="header-nav" >
+            <!-- Mudado de id para class para casar com o seu CSS -->
+            <nav class="header-nav">
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="index.html" class="nav-link">Password Generator</a>
                 <a href="checker.html" class="nav-link">Password Strength Checker</a>
@@ -30,8 +31,11 @@
             </nav>
         </div>
     </header>
-    <h1 style="margin: 20px 488px;">Password generator</h1>
-    <main class="container" style="margin-top: -5px;">
+
+    <!-- Removida a margem de 488px que quebrava o layout -->
+    <h1 class="main-title">Password generator</h1>
+
+    <main class="container">
         <div class="password-type-container">
             <button class="type-btn active" id="btn-random">
                  <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
@@ -78,8 +82,9 @@
             </div>
         </div>
         <button class="btn-generate" id="generate-btn">Generate it!</button>
-        <p style="font-size: 11px; color: #666a72; margin: 10px 0px 0px 37px;">🔐 100% Client-Side. Your data never touches our servers.</p>
+        <p class="client-side-note">🔐 100% Client-Side. Your data never touches our servers.</p>
     </main>
+
     <footer id="footer">
          <div class="footer-links">
              <a href="privacy.html">Privacy Policy</a>
