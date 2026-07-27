@@ -15,6 +15,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%; /* Garante que o corpo ocupe toda a largura da tela */
+    overflow-x: hidden; /* Evita qualquer rolagem horizontal indesejada */
 }
 
 #header {
@@ -95,11 +97,12 @@ body {
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 10px 25px -5px rgba(38, 117, 220, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-    width: calc(100% - 40px); 
+    width: 90%; /* Usa porcentagem fixa para se ajustar perfeitamente em telas pequenas */
     max-width: 480px; 
     border: 1px solid #b6cce6;
-    margin-bottom: 60px;
+    margin: 0 auto 60px auto; /* Centraliza a caixa automaticamente nas laterais */
 }
+
 
 .password-type-container {
   display: flex;
