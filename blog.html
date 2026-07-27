@@ -9,8 +9,8 @@
     <link rel="shortcut icon" href="media/icons/logo.png" type="image/x-png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .blog-container {
-            margin: 0px 0px 0px 337px;
+        .container blog-container {
+            margin: -5px 0px 0px 300px;
             max-width: 650px !important; 
             padding: 35px;               
         }
@@ -88,11 +88,11 @@
 <body>
     <header id="header">
         <div class="header-container">
-            <div class="logo-wrapper" >
-                <img src="media/icons/logo2.png" alt="ZetaPass" style="max-width: 23px; margin-top: 5px; margin-left: 0px;">
-                <h1 class="header-h1" onclick="window.location.href = 'index.html'" style="cursor: pointer;">ZetaVault</h1>
+            <div class="logo-wrapper">
+                <img src="media/icons/logo2.png" alt="ZetaPass" class="logo-img">
+                <h1 class="header-h1" onclick="window.location.href = 'index.html'">ZetaVault</h1>
             </div>
-            <nav id="header-nav" >
+            <nav class="header-nav" style="margin-top: 5px;">
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="index.html" class="nav-link">Password Generator</a>
                 <a href="checker.html" class="nav-link">Password Strength Checker</a>
@@ -102,7 +102,7 @@
     </header>
     <h1 style="text-align: center; margin: 30px auto 5px auto;">ZetaVault Blog</h1>
     <p class="blog-intro">Simple guides, expert tips, and insights to help you secure your digital life.</p>
-    <main class="container blog-container" style="margin-top: -5px;">
+    <main class="container blog-container">
         <div class="articles-grid">
             <a href="topic/how-does-end-to-end-encryption-work.html" class="article-card">
                 <h2 class="article-title">How Does End-to-End Encryption Work? (The Simple Explanation)</h2>
