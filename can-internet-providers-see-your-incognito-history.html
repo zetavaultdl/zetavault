@@ -96,12 +96,16 @@
 
         /* Media Queries para Celulares */
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
             .article-container-wide {
-                margin-left: -20px;
-                padding: 15px;
+                width: 100% !important;
+                padding: 35px !important;
             }
             .article-content h1 {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
             }
             .article-content h2 {
                 font-size: 1.15rem;
