@@ -115,34 +115,34 @@
             outline: none;
         }
         .input-copy-row {
-            display: flex;
-            gap: 10px;
-            width: 100%;
+          display: flex;
+          gap: 10px;
+          width: 100%;
+          flex-wrap: wrap; 
         }
         .display-input {
-            max-width: 408px;
-            flex-grow: 1;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            outline: none;
-            background-color: #ffffff;
-            caret-color: #0070F0;
-        }
+          flex: 1 1 200px; 
+          padding: 12px;
+          border: 2px solid #e2e8f0;
+          border-radius: 8px;
+          font-size: 1.1rem;
+          outline: none;
+          background-color: #ffffff;
+          caret-color: #0070F0;
+    }
         .display-input:focus { border-color: #0070F0; }
         .btn-submit-copy {
-            background-color: #16a34a;
-            color: #ffffff;
-            border: none;
-            padding: 0 24px;
-            font-size: 0.95rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            flex-shrink: 0;
-        }
+          background-color: #16a34a;
+          color: #ffffff;
+          border: none;
+          padding: 12px 24px; 
+          font-size: 0.95rem;
+          font-weight: bold;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background 0.2s, transform 0.1s;
+          flex: 1 1 100%; 
+}
         .btn-submit-copy:hover { background-color: #15803d; }
         .btn-submit-copy:active { transform: scale(0.97); }
 
