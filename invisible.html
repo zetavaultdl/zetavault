@@ -115,34 +115,35 @@
             outline: none;
         }
         .input-copy-row {
-          display: flex;
-          gap: 10px;
-          width: 100%;
-          flex-wrap: wrap; 
-        }
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }   
         .display-input {
-          flex: 1 1 200px; 
-          padding: 12px;
-          border: 2px solid #e2e8f0;
-          border-radius: 8px;
-          font-size: 1.1rem;
-          outline: none;
-          background-color: #ffffff;
-          caret-color: #0070F0;
-    }
+            width: 100%; 
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            outline: none;
+            background-color: #ffffff;
+            caret-color: #0070F0;
+            box-sizing: border-box; 
+        }
         .display-input:focus { border-color: #0070F0; }
         .btn-submit-copy {
-          background-color: #16a34a;
-          color: #ffffff;
-          border: none;
-          padding: 12px 24px; 
-          font-size: 0.95rem;
-          font-weight: bold;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: background 0.2s, transform 0.1s;
-          flex: 1 1 100%; 
-}
+            background-color: #16a34a;
+            color: #ffffff;
+            border: none;
+            width: 100%; /* Faz o botão ter exatamente a mesma largura do input */
+            padding: 12px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
         .btn-submit-copy:hover { background-color: #15803d; }
         .btn-submit-copy:active { transform: scale(0.97); }
 
@@ -231,17 +232,19 @@
     <section class="article-column">
         <h2>How Does the Invisible Character Generator Work?</h2>
         <p>
-            If you have ever tried to send a blank message on WhatsApp, format a clean layout on social media, or create a unique gaming nickname with hidden spaces (popular in games like Free Fire), you might have noticed that standard keyboard spaces usually get trimmed or ignored. To bypass this restriction, our tool uses special <strong>Unicode characters</strong>.
+            If you have ever tried to send a blank message on WhatsApp, format a clean layout on social media, or create a unique gaming nickname with hidden spaces (popular in games like Free Fire), you might have noticed that standard keyboard spaces usually get trimmed or ignored. To bypass this restriction, our tool uses special <a href="https://en.wikipedia.org/wiki/Unicode" style="color: #1e293b; font-weight: 650; text-decoration: none;">Unicode characters</a>.
         </p>
-
-        <h3>The Power of Unicode and Empty Text</h3>
         <p>
-            Computers and modern applications understand text through standardized encoding systems known as Unicode. While a regular space is treated just as a separating keystroke, Unicode contains specific whitespace characters—such as the Em Space or En Space—that have physical code points recognized by systems as actual characters, even though they render entirely blank visually.
+            A Unicode Character is a system that gives every letter, number and symbol a unique ID. <br>
+            That id is known as a <strong style="color: #1e293b;"> code point.</strong> <br> This system covers modern and old languages, math symbols, and emojis so computers can show them all correctly.
         </p>
-        
-        <p>
-            When you use our generator, you aren't just copying a blank gap; you are copying a valid invisible text asset. Because it processes everything locally via client-side code, it generates your blank text instantly while keeping your privacy completely secure.
-        </p>
+        <h2>How Unicode Works?</h2>
+        <p> • Code Points: Each character gets a specific tag like U+0041 for the letter "A".</p>
+        <p> • Unicode contains over 150,000 characters from hundreds of different writing systems.</p>
+        <p> • Older systems only worked with one language at a time. But Unicode allows mixing English, Arabic, Chinese, and emojis in a single text file.</p>
+        <h2>What's the difference between Unicode and <a href="https://en.wikipedia.org/wiki/Character_encoding" style="color: #1e293b; font-weight: 650; text-decoration: none;">Encodings</a> (UTF-8)?</h2>
+        <p> UTF-8 is how the computer turns that ID number into computer code (binary bytes) to save it on a hard drive.</p>
+        <p> So we can consider Unicode to be an special ID indicating the letter, emoji, or number to the computer. Encodings, on the other hand, "translate" the character ID into the computer's language (binary code).</p>
     </section>
 
     <footer id="footer" style="margin-top: 20px;">
