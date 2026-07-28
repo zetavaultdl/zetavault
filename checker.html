@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-image-preview:large">
+    
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zetavault.io/">
+    <meta property="og:url" content="https://zetavault.io">
     <meta property="og:title" content="Password Strength Checker: Test If Your Password Is Safe | ZetaVault">
     <meta property="og:description" content="Is your password secure against hackers? Test your password strength instantly with our free online security checker and find out if your credentials are safe.">
     <meta property="og:image" content="media/imgs/og-image.png">
     <meta name="description" content="Is your password secure against hackers? Test your password strength instantly with our free online security checker and find out if your credentials are safe.">
+    
     <title>Password Strength Checker: Test If Your Password Is Safe | ZetaVault</title>
+    
     <link href="https://fontshare.com[]=clash-display@600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="media/icons/logo.png" type="image/x-png">
     <link rel="stylesheet" href="styles.css">
+    
     <style>
         .tool-card {
             margin: 0 auto;
@@ -204,7 +208,6 @@
                 <h1 class="header-h1" onclick="window.location.href = 'index.html'">ZetaVault</h1>
             </div>
             <nav class="header-nav" style="margin-top: 5px;">
-                <a href="blog.html" class="nav-link">Blog</a>
                 <a href="index.html" class="nav-link">Password Generator</a>
                 <a href="checker.html" class="nav-link">Password Strength Checker</a>
                 <a href="invisible.html" class="nav-link">Invisible Character</a>
@@ -246,7 +249,7 @@
         <a href="index.html" class="btn-home">Back to Generator</a>
     </main>
 
-    <footer id="footer" style="margin: 30px 0px 30px 0px;">
+    <footer id="footer" style="margin-top: 30px;">
          <div class="footer-links">
              <a href="privacy.html">Privacy Policy</a>
              <span class="divider">•</span>
@@ -257,6 +260,8 @@
          <p class="copyright">© 2026 <strong>ZetaVault</strong>. All rights reserved.</p>
          <p class="security-note">🔒 100% Secure: Passwords are generated locally and never saved on our servers.</p>
     </footer>
+
+    <script src="node_modules/zxcvbn/dist/zxcvbn.js"></script>
     <script src="js/checker.js"></script>
 </body>
 </html>
