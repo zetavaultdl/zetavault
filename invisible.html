@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://zetavault.io/invisible.html">
     <meta property="og:type" content="website">
     <meta name="description" content="Need a blank space or empty text? Generate and copy invisible characters instantly with our free tool. Perfect for empty messages, gaming names and formatting.">
-    <link href="https://fontshare.com[]=clash-display@600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="media/icons/logo.png" type="image/x-png">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -70,6 +70,7 @@
         .btn-large { background-color: #4f46e5; }
         .btn-large:hover { background-color: #4338ca; }
         .btn-space:active { transform: scale(0.97); }
+
         .counter-container {
             display: flex;
             align-items: center;
@@ -143,12 +144,35 @@
         }
         .btn-submit-copy:hover { background-color: #15803d; }
         .btn-submit-copy:active { transform: scale(0.97); }
-        .btn-home {
-            display: inline-block; width: 100%; background-color: #0070F0; color: #ffffff;
-            border: none; padding: 12px; font-size: 1rem; font-weight: bold; border-radius: 8px;
-            cursor: pointer; margin-top: 15px; text-align: center; text-decoration: none; transition: background 0.2s;
+
+        .article-column {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            color: #334155;
+            line-height: 1.7;
         }
-        .btn-home:hover { background-color: #0056b3; }
+        .article-column h2 {
+            font-size: 1.35rem;
+            color: #1e293b;
+            margin-bottom: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .article-column h3 {
+            font-size: 1.1rem;
+            color: #1e293b;
+            margin: 24px 0 10px;
+            font-weight: 600;
+        }
+        .article-column p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 14px;
+        }
     </style>
 </head>
 <body>
@@ -165,7 +189,9 @@
             </nav>
         </div>
     </header>
+
     <h1 style="text-align: center; margin: 30px auto 10px auto;">Invisible Character Generator</h1>
+
     <main class="container tool-card" style="margin-top: 5px;">
         <div class="method-box">
             <h2 class="method-title">Quick Copy</h2>
@@ -176,6 +202,7 @@
                 <button class="btn-space btn-large" onclick="copySpace('\u2800', this)">Large [ ]</button>
             </div>
         </div>
+
         <div class="method-box">
             <h2 class="method-title">Custom Multiplier</h2>
             <p class="method-desc">Set the exact number of invisible characters you want, then click "Copy" to capture the string.</p>
@@ -192,9 +219,26 @@
                 <button class="btn-submit-copy" id="btn-copy-custom">Copy</button>
             </div>
         </div>
+
         <p style="font-size: 11px; color: #666a72; text-align: center; margin-bottom: 20px;">🔒 Safe & Fast: All operations happen locally. Perfect for gaming nicknames (Free Fire), WhatsApp layouts, and hidden titles.</p>
     </main>
-    <footer id="footer" style="margin-top: 30px;">
+    <section class="article-column">
+        <h2>How Does the Invisible Character Generator Work?</h2>
+        <p>
+            If you have ever tried to send a blank message on WhatsApp, format a clean layout on social media, or create a unique gaming nickname with hidden spaces (popular in games like Free Fire), you might have noticed that standard keyboard spaces usually get trimmed or ignored. To bypass this restriction, our tool uses special <strong>Unicode characters</strong>.
+        </p>
+
+        <h3>The Power of Unicode and Empty Text</h3>
+        <p>
+            Computers and modern applications understand text through standardized encoding systems known as Unicode. While a regular space is treated just as a separating keystroke, Unicode contains specific whitespace characters—such as the Em Space or En Space—that have physical code points recognized by systems as actual characters, even though they render entirely blank visually.
+        </p>
+        
+        <p>
+            When you use our generator, you aren't just copying a blank gap; you are copying a valid invisible text asset. Because it processes everything locally via client-side code, it generates your blank text instantly while keeping your privacy completely secure.
+        </p>
+    </section>
+
+    <footer id="footer" style="margin-top: 20px;">
          <div class="footer-links">
              <a href="privacy.html">Privacy Policy</a>
              <span class="divider">•</span>
@@ -203,8 +247,9 @@
              <a href="about.html">About Us</a>
          </div>
          <p class="copyright">© 2026 <strong>ZetaVault</strong>. All rights reserved.</p>
-         <p class="security-note">🔒 ZetaVault is a free secure random password generator designed to help you create unbreakable credentials instantly</p>
+         <p class="security-note">🔒 Use our free Invisible Character Generator to copy empty Unicode spaces safely. Clean, client-side tool designed to help you format blank messages and clean usernames across the web.</p>
     </footer>
+
 <script>
     function copySpace(character, button) {
         const originalText = button.textContent;
@@ -219,6 +264,7 @@
             alert("Failed to copy character.");
         });
     }
+
     document.addEventListener('DOMContentLoaded', () => {
         const btnMinus = document.getElementById('btn-minus');
         const btnPlus = document.getElementById('btn-plus');
@@ -226,7 +272,9 @@
         const customDisplay = document.getElementById('custom-display');
         const btnCopyCustom = document.getElementById('btn-copy-custom');
         const invisibleChar = '\u2003';
+
         customDisplay.setAttribute('readonly', true);
+
         function updateDisplay() {
             let count = parseInt(spaceCount.value);
             if (isNaN(count) || count < 1) {
@@ -239,6 +287,7 @@
             customDisplay.focus();
             customDisplay.setSelectionRange(0, customDisplay.value.length);
         }
+
         btnMinus.addEventListener('click', () => {
             let current = parseInt(spaceCount.value) || 1;
             if (current > 1) {
@@ -246,6 +295,7 @@
                 updateDisplay();
             }
         });
+
         btnPlus.addEventListener('click', () => {
             let current = parseInt(spaceCount.value) || 1;
             if (current < 500) {
@@ -253,6 +303,7 @@
                 updateDisplay();
             }
         });
+
         spaceCount.removeAttribute('readonly'); 
         spaceCount.addEventListener('input', updateDisplay);
         spaceCount.addEventListener('blur', () => {
@@ -261,9 +312,11 @@
                 updateDisplay();
             }
         });
+
         customDisplay.addEventListener('click', () => {
             customDisplay.setSelectionRange(0, customDisplay.value.length);
         });
+
         btnCopyCustom.addEventListener('click', () => {
             navigator.clipboard.writeText(customDisplay.value).then(() => {
                 const originalText = btnCopyCustom.textContent;
@@ -276,6 +329,7 @@
                 }, 1500);
             });
         });
+
         updateDisplay();
     });
 </script>
